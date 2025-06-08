@@ -159,7 +159,7 @@
   text-decoration: none;
   font-weight: 700;
   background-size: cover;
-  background-image: url("LinkBG.png");
+  background-image: url("https://mica-davi.github.io/portfolio_page/LinkBG.png");
   -webkit-background-clip: text;
   animation: background-text-animation 50s linear infinite forwards;
 
@@ -178,7 +178,7 @@
   text-decoration: none;
   font-weight: 700;
   background-size: cover;
-  background-image: url("LinkBG.png");
+  background-image: url("https://mica-davi.github.io/portfolio_page/LinkBG.png");
   -webkit-background-clip: text;
   animation: background-text-animation 30s linear infinite forwards;
 
