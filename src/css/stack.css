@@ -1,0 +1,200 @@
+:root{
+    --persona-black: #100c08;
+    --persona-light-red: #d92323;
+    --persona-dark-red: #480203;
+    --persona-light-yellow: #8c6723;
+    --persona-dark-yellow: #f2e852;
+    --persona-white: #f7f7f7;
+}
+
+.background-panel{
+    display: flex;
+    background-color: var(--persona-light-red);
+    margin: 0;
+    width: 200%;
+    transform: rotate(-1deg) translateX(-25%);
+    margin-top: 5%;
+    padding: 5% 2%;
+}
+
+.normalize-panel{
+    display: flex;
+    flex-direction: row-reverse;
+    width: 58%;
+    transform: rotate(1deg) translateX(25%);
+}
+
+.stacks-panel{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    background-color: var(--persona-black);
+    border-radius: 0px 5px 5px 5px;
+    width: 75%;
+    padding: 1%;
+    box-shadow: -10px 12px 0px 2px var(--persona-dark-red);
+}
+
+.stack-transition{
+    display: flex;
+    overflow: hidden;
+    z-index: 2;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes animate-pillar-1{
+    0%{height: 0%;}
+    60%{height: 200%;}
+    100%{height: 0%;}
+}
+
+@keyframes animate-pillar-2{
+    0%{height: 0%;}
+    40%{height: 200%;}
+    90%{height: 0%;}
+    100%{height: 0%;}
+}
+
+@keyframes animate-pillar-3{
+    0%{height: 0%;}
+    20%{height: 200%;}
+    80%{height: 0%;}
+    100%{height: 0%;}
+}
+
+.stack-pillar-1{
+    height: 0%;
+    position: absolute;
+    animation: animate-pillar-1 .75s linear 0s 1 normal forwards;
+    width: 33.4%;
+    background-color: var(--persona-light-red);
+}
+
+.stack-pillar-2{
+    margin-left: 33.3%;
+    height: 0%;
+    position: absolute;
+    animation: animate-pillar-2 .75s linear .10s 1 normal forwards;
+    width: 33.4%;
+    background-color: var(--persona-light-red);
+}
+
+.stack-pillar-3{
+    margin-left: 66.6%;
+    height: 0%;
+    position: absolute;
+    animation: animate-pillar-3 .75s linear .20s 1 normal forwards;
+    width: 33.4%;
+    background-color: var(--persona-light-red);
+}
+    
+
+.tab-btn{
+    background-color: var(--persona-white);
+    border: 2px solid var(--persona-dark-red);
+    width: 15%;
+    height: 50px;
+    position: relative;
+    z-index: 1;
+    transition: transform .1s, width .1s;
+
+    font-family: "Libre Franklin", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.tab-btn:hover{
+    cursor: pointer;
+    transform: rotate(1deg);
+    width: 15%;
+    height: 65px;
+    box-shadow: 1px 1px 0px 2px var(--persona-dark-red);
+}
+
+.tabs{
+    width: 50%;
+    line-clamp: 1; 
+    direction: rtl;
+}
+
+.tab-btn[data-tab-selected="true"]{
+    background-color: var(--persona-dark-red);
+    color: var(--persona-white);
+    transform: rotate(1deg);
+    width: 22%;
+    height: 65px;
+}
+
+.tab-content{
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    transform: rotate(-.5deg) translateX(-.5%) translateY(-1%);
+    background-color: var(--persona-white);
+    box-shadow: -5px 10px 0px 2px var(--persona-dark-red);
+    box-shadow: 0px 0px 0px 6px var(--persona-light-red) inset;
+    -webkit-box-shadow: 0px 0px 0px 6px var(--persona-light-red) inset;
+    -moz-box-shadow: 0px 0px 0px 6px var(--persona-light-red) inset;
+    border-radius: 0px 20px 20px 30px;
+    width: 95%;
+    height: 60vh;
+}
+
+.hidden{
+    display: none !important;
+}
+
+.skill{
+    overflow-y: scroll;
+    margin: 5%;
+    width: 100%;
+}
+
+#gamedevcontent a{
+  color: rgba(255,0,0,0.1);
+  font-size: 1.25em;
+  text-decoration: none;
+  font-weight: 700;
+  background-size: cover;
+  background-image: url("LinkBG.png");
+  -webkit-background-clip: text;
+  animation: background-text-animation 50s linear infinite forwards;
+
+  transition: font-size .1s, transform .1s;
+}
+#gamedevcontent a:hover{
+    display: inline-block;
+    font-size: 1.45em;
+    transform: rotate(-4deg);
+}
+
+
+#extracontent a{
+  color: rgba(255,0,0,0.1);
+  font-size: 1.25em;
+  text-decoration: none;
+  font-weight: 700;
+  background-size: cover;
+  background-image: url("LinkBG.png");
+  -webkit-background-clip: text;
+  animation: background-text-animation 30s linear infinite forwards;
+
+  transition: font-size .1s, transform .1s;
+}
+
+#extracontent a:hover{
+    display: inline-block;
+    font-size: 1.35em;
+    transform: rotate(-4deg);
+}
+@keyframes background-text-animation {
+  0%{
+    background-position: left 0px top 50%;
+  }
+  100%{
+    background-position: left 1500px top 50%;
+  }
+}
