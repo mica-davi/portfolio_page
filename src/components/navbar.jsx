@@ -1,19 +1,29 @@
-import "../css/navbar.css"
+const sections = ["about", "experience", "projects", "skills", "education", "contact"]
 
-function Navbar(){
-
-    function scroller(id) { 
-        document.getElementById(id).scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" })
-    };   
-
+function Navbar({ t, lang, setLang }) {
     return (
-        <div className="nav">
-            <div className="normalize">        
-                <button onClick={() => (scroller("about"))}>About me</button>
-                <button onClick={() => {scroller("skills")}}>Skills</button>
-                {/* <button>Contact</button> */}
+        <header className="nav">
+            <div className="nav-inner">
+                <a href="#top" className="nav-brand">DM</a>
+                <nav className="nav-links" aria-label="Menu">
+                    {sections.map(id => (
+                        <a key={id} href={`#${id}`}>{t.nav[id]}</a>
+                    ))}
+                </nav>
+                <div className="lang-switch" role="group" aria-label="Idioma / Language">
+                    {["pt", "en"].map(code => (
+                        <button
+                            key={code}
+                            type="button"
+                            aria-pressed={lang === code}
+                            onClick={() => setLang(code)}
+                        >
+                            {code.toUpperCase()}
+                        </button>
+                    ))}
+                </div>
             </div>
-        </div>
+        </header>
     )
 }
 
